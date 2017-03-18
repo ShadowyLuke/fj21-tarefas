@@ -5,6 +5,7 @@ import java.util.Calendar;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Tarefa {
 	
@@ -12,6 +13,7 @@ public class Tarefa {
 	@NotEmpty @Size(min=5)
 	private String descricao;
 	private boolean finalizado;
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Calendar dataFinalizacao;
 
 	public Long getId() {
